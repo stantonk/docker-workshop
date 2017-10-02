@@ -1,7 +1,7 @@
 Set of containers providing a fully working nsqd
 -----------------
 
-* start the 3 nsq containers
+* start the 3 nsq containers defined in `docker-compose.yml`
 
 ```
 docker-compose up -d
