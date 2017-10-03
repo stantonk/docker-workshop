@@ -1,0 +1,14 @@
+FROM python:2.7.14
+
+# https://docs.docker.com/compose/startup-order/
+ENV DOCKERIZE_VERSION v0.3.0
+RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+
+ADD requirements.txt /
+RUN pip install -r requirements.txt
+ADD fabfile.py /
+
+# wait for mysql to pass a healthcheck before executing fab command
+CMD dockerize -wait tcp://dev-database:3306 -timeout 100s fab -f /fabfile.py query_mysql

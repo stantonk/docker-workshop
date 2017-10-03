@@ -1,0 +1,8 @@
+pipdeptree==0.10.1
+chardet==3.0.2
+# hrm.. not needed for testrunner...? fabric-mendel==0.6.10
+fabric
+pymysql==0.7.10
+yoyo-migrations==5.0.5
+awscli==1.11.99
+requests==2.18.3

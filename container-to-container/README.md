@@ -1,0 +1,1 @@
+This example demonstrates inter-container communication, waiting for a MySQL container to bootstrap, etc.
