@@ -2,7 +2,7 @@ This example demonstrates:
 
 * Simplistic bootstrapping of a Python environment in a container (`Dockerfile.testrunner`)
 * Inter-container communication when using `docker-compose`
-* [Dealing with waiting for a container to be ready](https://docs.docker.com/compose/startup-order/) with [dockerize](https://github.com/jwilder/dockerize#waiting-for-other-dependencies). this is much more reliable and robust than shell script hacks for race conditions.
+* [Dealing with waiting for a container to be ready](https://docs.docker.com/compose/startup-order/) with [dockerize](https://github.com/jwilder/dockerize#waiting-for-other-dependencies). this is much more reliable and robust than shell script hacks for race conditions. **NOTE: you can use dockerize to wait on multiple services over multiple protocols and ports :) :)!**
 * Leveraging environment variables to share configuration information between containers spun up by `docker-compose` (e.g. hostname of database is `dev-database` defined by the `docker-compose.yml`)
 
 
